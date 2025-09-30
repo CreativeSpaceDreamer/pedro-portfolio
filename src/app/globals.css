@@ -1,26 +1,140 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --radius: 1.25rem;
+  --background: #0b0c10;
+  --foreground: #e8e8ea;
+  --card: #15171e;
+  --card-foreground: #f6f6f8;
+  --popover: #15171e;
+  --popover-foreground: #f6f6f8;
+  --primary: #7c2d3b;
+  --primary-foreground: #f8f5f6;
+  --secondary: #1d1f2a;
+  --secondary-foreground: #e8e8ea;
+  --muted: #101218;
+  --muted-foreground: #a2a5b3;
+  --accent: #7c2d3b;
+  --accent-foreground: #f8f5f6;
+  --destructive: #f87171;
+  --border: rgba(232, 232, 234, 0.08);
+  --input: rgba(232, 232, 234, 0.12);
+  --ring: rgba(124, 45, 59, 0.6);
+  --sidebar: rgba(11, 12, 16, 0.65);
+  --sidebar-foreground: #e8e8ea;
+  --sidebar-primary: rgba(124, 45, 59, 0.9);
+  --sidebar-primary-foreground: #f8f5f6;
+  --sidebar-accent: rgba(21, 23, 30, 0.8);
+  --sidebar-accent-foreground: #e8e8ea;
+  --sidebar-border: rgba(232, 232, 234, 0.08);
+  --sidebar-ring: rgba(124, 45, 59, 0.4);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(circle at top left, rgba(124, 45, 59, 0.15), transparent 45%),
+      radial-gradient(circle at bottom right, rgba(124, 45, 59, 0.12), transparent 55%);
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 65%, transparent);
+    color: var(--primary-foreground);
+  }
+
+  a {
+    @apply underline-offset-4 transition-colors;
+  }
+
+  a:hover {
+    color: color-mix(in srgb, var(--primary) 40%, var(--foreground));
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
+
+@layer base {
+  .prose-root {
+    @apply space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg;
+  }
+
+  .prose-root h2 {
+    @apply text-2xl font-semibold text-foreground sm:text-3xl;
+  }
+
+  .prose-root h3 {
+    @apply text-xl font-semibold text-foreground;
+  }
+
+  .prose-root p {
+    @apply leading-relaxed text-muted-foreground;
+  }
+
+  .prose-root ul,
+  .prose-root ol {
+    @apply list-disc space-y-2 pl-6 text-muted-foreground;
+  }
+
+  .prose-root strong {
+    @apply text-foreground;
+  }
+
+  .prose-root a {
+    @apply text-primary hover:text-primary/80;
+  }
 }

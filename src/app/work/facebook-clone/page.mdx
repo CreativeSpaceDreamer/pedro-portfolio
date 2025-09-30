@@ -1,0 +1,64 @@
+import { CaseStudyHeader } from "@/components/case-study-header";
+import { Prose } from "@/components/prose";
+import { Separator } from "@/components/ui/separator";
+
+export const metadata = {
+  title: "Facebook UI Clone Case Study",
+  description: "HTML5/CSS3 Facebook feed and profile UI recreation demonstrating layout mastery and component thinking.",
+  openGraph: {
+    title: "Facebook UI Clone Case Study",
+    description: "HTML5/CSS3 Facebook feed and profile UI recreation demonstrating layout mastery and component thinking.",
+  },
+};
+
+<CaseStudyHeader
+  title="Facebook UI Clone (No AI)"
+  subtitle="Feed & profile UI recreation"
+  blurb="HTML5/CSS3 feed & profile UI; layout mastery and component thinking. Built without frameworks to highlight CSS architecture and consistent spacing systems."
+  tags={["HTML5", "CSS3", "Component Systems", "Responsive Layout"]}
+  metadata={[
+    { label: "Role", value: "Front-end implementer" },
+    { label: "Focus", value: "Component thinking, spacing rhythm, state styling" },
+  ]}
+  links={[
+    {
+      label: "GitHub repo",
+      href: "https://github.com/CreativeSpaceDreamer/FB-CLONE",
+      external: true,
+    },
+  ]}
+/>
+
+<Separator className="my-14 bg-border/40" />
+
+<Prose>
+  <h2>Summary</h2>
+  <p>
+    “HTML5/CSS3 feed & profile UI; layout mastery and component thinking.” The clone focuses on orchestrating complex card structures, navigation states, and feed interactions with a maintainable CSS architecture.
+  </p>
+
+  <h2>Highlights</h2>
+  <ul>
+    <li>Feed cards and side panels built with CSS grid and flexbox combos for responsive balance.</li>
+    <li>Profile hero modules that adapt to different cover image ratios and copy lengths.</li>
+    <li>Full focus-visible treatments and keyboard navigation for posts, actions, and dialogs.</li>
+  </ul>
+
+  <h2>Screenshots</h2>
+  <p>Annotated screenshots will document feed states, messaging UI, and responsive variations.</p>
+  <figure className="mt-6 overflow-hidden rounded-[32px] border border-border/50 bg-card/80 shadow-[0_18px_54px_rgba(0,0,0,0.2)]">
+    <img
+      src="/case-facebook.png"
+      alt="Facebook UI clone showing stories, feed posts, and right rail"
+      className="block w-full h-auto"
+    />
+    <figcaption className="px-6 py-4 text-sm text-muted-foreground">Stories, feed modules, sponsored blocks, and contact rail rebuilt as semantic HTML/CSS components.</figcaption>
+  </figure>
+
+  <h2>Implementation notes</h2>
+  <ul>
+    <li>CSS custom properties control spacing and shadows to keep visual rhythm consistent.</li>
+    <li>Layered <code>box-shadow</code> recipes emulate Facebook’s depth without heavy assets.</li>
+    <li>Semantic HTML ensures sections, asides, and nav elements remain screen-reader friendly.</li>
+  </ul>
+</Prose>

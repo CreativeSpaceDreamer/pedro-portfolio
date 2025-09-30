@@ -1,0 +1,99 @@
+import { CaseStudyHeader } from "@/components/case-study-header";
+import { Prose } from "@/components/prose";
+import { Separator } from "@/components/ui/separator";
+
+export const metadata = {
+  title: "Evercurrent Case Study",
+  description:
+    "Retention-focused lifecycle agency architecture that captures structured data, enforces SOPs, and keeps offers aligned with segments.",
+  openGraph: {
+    title: "Evercurrent Case Study",
+    description:
+      "Retention-focused lifecycle agency architecture that captures structured data, enforces SOPs, and keeps offers aligned with segments.",
+  },
+};
+
+<CaseStudyHeader
+  title="Evercurrent — Email/Lifecycle Agency"
+  subtitle="Founder · Email/Lifecycle Agency"
+  blurb="DTC retention architecture prioritized message timing, segmentation, and offer clarity. Each flow is documented as SOPs so data capture stays reliable regardless of operator."
+  tags={["Lifecycle Architecture", "Klaviyo", "Shopify", "Segmentation", "UTM Discipline"]}
+  metadata={[
+    { label: "Role", value: "Founder, Lifecycle Architect" },
+    { label: "Core Stack", value: "Shopify · Klaviyo · Notion SOPs · GA4" },
+    { label: "Focus", value: "Lifecycle mapping, segmentation logic, repeatable flows" },
+  ]}
+  links={[
+    {
+      label: "GitHub repo",
+      href: "https://github.com/CreativeSpaceDreamer/evercurrent-agency",
+      external: true,
+    },
+  ]}
+  cta={{ label: "Discuss email & data quality", href: "mailto:pedro@evercurrent.io" }}
+/>
+
+<Separator className="my-14 bg-border/40" />
+
+<Prose>
+  <h2>Problem</h2>
+  <p>
+    Retention revenue was inconsistent because lifecycle messaging lacked structure. Offers were duplicated, segmentation rules were tribal knowledge, and UTMs broke weekly — making reporting unreliable.
+  </p>
+
+  <h2>Approach</h2>
+  <ul>
+    <li>Mapped full lifecycle (Welcome, Browse Abandon, Cart/Checkout, Post-Purchase, Sunset) into a single source of truth.</li>
+    <li>Codified segmentation logic with explicit entrance/exit criteria, ensuring each step produces labeled training data.</li>
+    <li>Documented every flow as SOPs, including template IDs, UTM structures, and expected events.</li>
+  </ul>
+
+  <h2>Outcomes</h2>
+  <ul>
+    <li>Lifecycle map covers 90%+ of customer touchpoints with clearly labeled triggers and responses.</li>
+    <li>Every offer variant ties back to a unique tag and UTM, generating consistent analytics and training-ready examples.</li>
+    <li>Team handoffs are faster because SOPs remove ambiguity around copy, timing, and segmentation.</li>
+  </ul>
+</Prose>
+
+<Separator className="my-14 bg-border/40" />
+
+<Prose>
+  <h2>Lifecycle map</h2>
+  <p>The system runs six primary flows with variants based on purchase behavior.</p>
+  <ul>
+    <li><strong>Welcome</strong> — multi-day nurture keyed off offer intent and product tier.</li>
+    <li><strong>Browse Abandon</strong> — dynamic content from viewed collections, enriched with onsite quiz data.</li>
+    <li><strong>Cart / Checkout</strong> — urgency messaging with SKU-specific objections pulled from FAQ data.</li>
+    <li><strong>Post-Purchase</strong> — cross-sells triggered by inventory status and contribution margin.</li>
+    <li><strong>Sunset</strong> — deliverability-friendly ramp-down that documents last-engaged activity.</li>
+  </ul>
+
+  <h2>Segmentation logic &amp; UTM discipline</h2>
+  <ul>
+    <li>Segments named with consistent prefixes (<code>lifecycle::</code>, <code>offer::</code>, <code>behavior::</code>) so exports are instantly machine-readable.</li>
+    <li>UTMs follow <code>source</code>/<code>medium</code>/<code>campaign</code>/<code>content</code> structure, stored alongside template IDs.</li>
+    <li>Operators log every change in Notion, creating a chronological dataset of experiments and expected outcomes.</li>
+  </ul>
+
+  <h2>Documentation</h2>
+  <p>Flows documented as SOPs to ensure repeatability and reliable data capture. Each SOP includes:</p>
+  <ul>
+    <li>Trigger logic and required segment(s)</li>
+    <li>Template references and content variants</li>
+    <li>UTM strings, event names, and success metrics</li>
+  </ul>
+
+  <h2>Screenshots</h2>
+  <p>Annotated visuals illustrate lifecycle sequencing, segmentation trees, and reporting dashboards.</p>
+  <figure className="mt-6 overflow-hidden rounded-[32px] border border-border/50 bg-card/80 shadow-[0_18px_54px_rgba(0,0,0,0.2)]">
+    <img
+      src="/case-evercurrent.png"
+      alt="Evercurrent agency lifecycle operating system overview"
+      className="block w-full h-auto"
+    />
+    <figcaption className="px-6 py-4 text-sm text-muted-foreground">Lifecycle operating cadence page with relationship-first messaging, retention rituals, and service pillars.</figcaption>
+  </figure>
+</Prose>
+
+{/* TODO: Add live URL for Evercurrent site once ready. */}

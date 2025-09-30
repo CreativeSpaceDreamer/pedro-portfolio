@@ -1,0 +1,64 @@
+import { CaseStudyHeader } from "@/components/case-study-header";
+import { Prose } from "@/components/prose";
+import { Separator } from "@/components/ui/separator";
+
+export const metadata = {
+  title: "YouTube UI Clone Case Study",
+  description: "Semantic HTML5/CSS3 YouTube homepage replica with responsive grids and accessibility focus.",
+  openGraph: {
+    title: "YouTube UI Clone Case Study",
+    description: "Semantic HTML5/CSS3 YouTube homepage replica with responsive grids and accessibility focus.",
+  },
+};
+
+<CaseStudyHeader
+  title="YouTube UI Clone (No AI)"
+  subtitle="Semantic HTML5/CSS3 homepage"
+  blurb="Pixel-tight homepage replica with semantic HTML/CSS and responsive grids. Built to demonstrate layout precision and accessibility-first markup without frameworks."
+  tags={["HTML5", "CSS3", "Accessibility", "Responsive Grid"]}
+  metadata={[
+    { label: "Role", value: "Front-end implementer" },
+    { label: "Focus", value: "Semantics, responsive grid, ARIA labelling" },
+  ]}
+  links={[
+    {
+      label: "GitHub repo",
+      href: "https://github.com/CreativeSpaceDreamer/YOUTUBE-CLONE",
+      external: true,
+    },
+  ]}
+/>
+
+<Separator className="my-14 bg-border/40" />
+
+<Prose>
+  <h2>Summary</h2>
+  <p>
+    “Semantic HTML5/CSS3 homepage; responsive grid and accessibility focus.” Every component is handcrafted to mirror YouTube’s layout while keeping markup accessible for keyboard and assistive technology.
+  </p>
+
+  <h2>Highlights</h2>
+  <ul>
+    <li>Grid-based layout that adapts from mobile column to desktop multi-column with CSS custom properties.</li>
+    <li>Accessible header navigation featuring skip links, focus traps, and ARIA labels for search and filters.</li>
+    <li>Responsive thumbnail cards with aspect-ratio handling, text clamping, and focus-visible states.</li>
+  </ul>
+
+  <h2>Screenshots</h2>
+  <p>Annotated screenshots cover the home feed, player preview states, and responsive breakpoints.</p>
+  <figure className="mt-6 overflow-hidden rounded-[32px] border border-border/50 bg-card/80 shadow-[0_18px_54px_rgba(0,0,0,0.2)]">
+    <img
+      src="/case-youtube.png"
+      alt="YouTube UI clone home feed with navigation rail"
+      className="block w-full h-auto"
+    />
+    <figcaption className="px-6 py-4 text-sm text-muted-foreground">Homepage grid rebuilt with semantic HTML5 elements and responsive CSS grid breakpoints.</figcaption>
+  </figure>
+
+  <h2>Implementation notes</h2>
+  <ul>
+    <li>Uses <code>grid-template-columns</code> with minmax utilities for adaptable rows.</li>
+    <li>Employs <code>prefers-reduced-motion</code> queries to respect user settings.</li>
+    <li>Card components built with BEM-like naming to keep CSS maintainable.</li>
+  </ul>
+</Prose>
