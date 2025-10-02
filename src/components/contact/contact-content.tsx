@@ -32,7 +32,7 @@ export function ContactContent() {
           />
           <div className="mt-8 space-y-4 text-sm text-muted-foreground">
             <Link
-              href="mailto:pedro@evercurrent.io"
+              href="mailto:pedropichardo00@gmail.com"
               className={cn(
                 "group inline-flex items-center gap-3 rounded-2xl border border-border/70 bg-background/40 px-4 py-3 text-sm font-semibold text-foreground transition-all",
                 "hover:-translate-y-0.5 hover:border-primary hover:bg-primary/10",
@@ -40,7 +40,7 @@ export function ContactContent() {
               )}
             >
               <Mail className="h-4 w-4" aria-hidden />
-              pedro@evercurrent.io
+              pedropichardo00@gmail.com
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
             </Link>
             <Link

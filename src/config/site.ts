@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Email/Retention Specialist & Ecommerce Founder building lifecycle programs and structured workflows that benefit AI training.",
   url: "https://pedro-portfolio.vercel.app",
-  email: "mailto:pedro@evercurrent.io",
+  email: "mailto:pedropichardo00@gmail.com",
   github: "https://github.com/CreativeSpaceDreamer",
   navigation: [
     { label: "Work", href: "/work/evercurrent" },
